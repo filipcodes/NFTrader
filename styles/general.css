@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap");
+
+/* VARIABLES */
+
+:root {
+  /* =======COLORS======== */
+  --blue: hsl(203, 71%, 60%);
+  --pink: hsl(277, 56%, 68%);
+  --text-color: hsl(203, 8%, 98%);
+  --text-color-light: hsl(203, 8%, 80%);
+  --body-color: hsl(259, 20%, 18%);
+
+  /* ==========FONTS========= */
+  --body-font: "Oxanium", cursive;
+
+  /* ===========ANIMATION=========== */
+  --animation-time: 0.3s;
+}
+
+/* ======================= */
+/* GLOBAL RESET */
+/* ======================= */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+/*
+  10. Normal Lists
+*/
+ul {
+  list-style: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+.main {
+  overflow: hidden;
+}
+/* ======================= */
+/* UTILITY CLASSES */
+/* ======================= */
+
+.container {
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0.9;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  color: #fff;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  transition: box-shadow 0.1s;
+  -webkit-transition: box-shadow 0.1s;
+  -moz-transition: box-shadow 0.1s;
+  -ms-transition: box-shadow 0.1s;
+  -o-transition: box-shadow 0.1s;
+}
+
+.btn-main:link,
+.btn-main:visited {
+  background: linear-gradient(to bottom right, var(--blue), var(--pink));
+}
+.btn:hover,
+.btn:active {
+  box-shadow: 0 0 3.6rem var(--blue);
+}
+.btn-main:active {
+  animation: btn-push 0.3s ease-in-out;
+  -webkit-animation: btn-push 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.color-text {
+  background: linear-gradient(90deg, var(--blue), var(--pink));
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* ================ANIMATIONS=============== */
+@keyframes float-eth {
+  0% {
+    transform: translateY(-2rem);
+    -webkit-transform: translateY(-2rem);
+    -moz-transform: translateY(-2rem);
+    -ms-transform: translateY(-2rem);
+    -o-transform: translateY(-2rem);
+    filter: drop-shadow(0 4px 3.2rem hsla(203, 71%, 60%, 0.5));
+    -webkit-filter: drop-shadow(0 4px 3.2rem hsla(203, 71%, 60%, 0.5));
+  }
+  50% {
+    transform: translateY(3rem);
+    -webkit-transform: translateY(3rem);
+    -moz-transform: translateY(3rem);
+    -ms-transform: translateY(3rem);
+    -o-transform: translateY(3rem);
+    filter: drop-shadow(0 4px 6.4rem hsla(203, 71%, 60%, 0.7));
+    -webkit-filter: drop-shadow(0 4px 6.4rem hsla(203, 71%, 60%, 0.8));
+  }
+  100% {
+    transform: translateY(-2rem);
+    -webkit-transform: translateY(-2rem);
+    -moz-transform: translateY(-2rem);
+    -ms-transform: translateY(-2rem);
+    -o-transform: translateY(-2rem);
+    filter: drop-shadow(0 4px 3.2rem hsla(203, 71%, 60%, 0.5));
+    -webkit-filter: drop-shadow(0 4px 3.2rem hsla(203, 71%, 60%, 0.5));
+  }
+}
+@keyframes btn-push {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 0.96;
+  }
+}
